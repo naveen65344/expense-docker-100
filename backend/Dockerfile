@@ -1,4 +1,7 @@
 FROM node
+ENV DB_HOST=mysql
 RUN mkdir /opt/server
 WORKDIR /opt/server
-COPY 
+COPY package.json .
+COPY *.js .
+RUN npm install
